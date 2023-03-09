@@ -16,8 +16,8 @@ import androidx.navigation.navArgument
 import com.example.marvelmovies.R
 import com.example.marvelmovies.TopBar
 import com.example.marvelmovies.favorites.ui.FavoriteListView
-import com.example.marvelmovies.moviedetail.ui.ComicView
-import com.example.marvelmovies.movies.ui.ComicListView
+import com.example.marvelmovies.comicdetail.ui.ComicView
+import com.example.marvelmovies.comics.ui.ComicListView
 import com.example.marvelmovies.ui.views.BottomNavigationBarView
 import com.example.marvelmovies.utils.Constants
 

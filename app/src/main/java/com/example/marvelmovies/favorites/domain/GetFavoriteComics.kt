@@ -1,8 +1,8 @@
 package com.example.marvelmovies.favorites.domain
 
-import com.example.marvelmovies.movies.data.repositories.ComicDataRepository
-import com.example.marvelmovies.movies.domain.mapper.ComicDataToDtoMapper
-import com.example.marvelmovies.movies.domain.models.ComicDto
+import com.example.marvelmovies.comics.data.repositories.ComicDataRepository
+import com.example.marvelmovies.comics.domain.mapper.ComicDataToDtoMapper
+import com.example.marvelmovies.comics.domain.models.ComicDto
 import javax.inject.Inject
 
 class GetFavoriteComics @Inject constructor(

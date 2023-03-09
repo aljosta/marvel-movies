@@ -5,6 +5,10 @@ plugins {
     id 'kotlin-kapt'
 }
 
+def apikeyPropertiesFile = rootProject.file("apikey.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
     namespace 'com.example.marvelmovies'
     compileSdk 33
@@ -28,6 +32,9 @@ android {
                         "room.expandProjection":"true"]
             }
         }
+
+        buildConfigField("String", "MARVEL_API_PRIVATE_KEY", apikeyProperties['MARVEL_API_PRIVATE_KEY'])
+        buildConfigField("String", "MARVEL_API_PUBLIC_KEY", apikeyProperties['MARVEL_API_PUBLIC_KEY'])
     }
 
     buildTypes {

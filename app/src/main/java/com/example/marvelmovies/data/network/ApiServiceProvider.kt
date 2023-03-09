@@ -1,5 +1,6 @@
 package com.example.marvelmovies.data.network
 
+import com.example.marvelmovies.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -23,8 +24,8 @@ class ApiServiceProvider {
             addInterceptor { chain ->
                 val timestamp = System.currentTimeMillis().toString()
                 val initialKey = timestamp +
-                        "7a4866a47933fadec09c0a0fe0b99e2792198e4d" +
-                        "2b756feb464727fc081683c4a4b6c344"
+                    BuildConfig.MARVEL_API_PRIVATE_KEY +
+                    BuildConfig.MARVEL_API_PUBLIC_KEY
                 val url = chain
                     .request()
                     .url
@@ -37,7 +38,6 @@ class ApiServiceProvider {
             }
         }.build()
     }
-
 
     private fun generateMd5Hash(initialKey: String): String {
         val md = MessageDigest.getInstance("MD5")

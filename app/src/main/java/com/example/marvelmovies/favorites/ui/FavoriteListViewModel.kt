@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.marvelmovies.favorites.domain.GetFavoriteComics
 import com.example.marvelmovies.favorites.ui.models.FavoritesState
-import com.example.marvelmovies.movies.ui.mapper.ComicDtoToModelMapper
+import com.example.marvelmovies.comics.ui.mapper.ComicDtoToModelMapper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

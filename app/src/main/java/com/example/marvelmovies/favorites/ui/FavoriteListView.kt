@@ -11,9 +11,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.marvelmovies.ErrorView
 import com.example.marvelmovies.LoadingView
 import com.example.marvelmovies.favorites.ui.models.FavoritesState
-import com.example.marvelmovies.movies.ui.ComicItemView
-import com.example.marvelmovies.movies.ui.EmptyStateView
-import com.example.marvelmovies.movies.ui.models.ComicModel
+import com.example.marvelmovies.comics.ui.ComicItemView
+import com.example.marvelmovies.comics.ui.EmptyStateView
+import com.example.marvelmovies.comics.ui.models.ComicModel
 
 private const val TAG = "FavoriteListView"
 

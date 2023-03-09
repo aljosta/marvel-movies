@@ -1,6 +1,6 @@
 package com.example.marvelmovies.favorites.domain
 
-import com.example.marvelmovies.movies.data.repositories.ComicDataRepository
+import com.example.marvelmovies.comics.data.repositories.ComicDataRepository
 import javax.inject.Inject
 
 class SetFavoriteComicUseCase @Inject constructor(
