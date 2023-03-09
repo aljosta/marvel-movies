@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Marvel Movies</string>
+    <string name="comic_list_top_bar_title">Comic List</string>
+    <string name="comic_detail_top_bar_title">Comic</string>
+    <string name="general_error_message">Something went wrong</string>
+    <string name="retry_button_text">Retry</string>
+    <string name="empty_state_message_title">We did not find comics</string>
+    <string name="empty_state_message_description">Check that the word is spelled correctly.</string>
+    <string name="navigation_comic_list_label">Comics</string>
+    <string name="navigation_favorites_label">Favorites</string>
+</resources>
