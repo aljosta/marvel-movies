@@ -1,5 +1,6 @@
 package com.example.marvelmovies.ui
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
@@ -15,9 +16,9 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.marvelmovies.R
 import com.example.marvelmovies.TopBar
-import com.example.marvelmovies.favorites.ui.FavoriteListView
 import com.example.marvelmovies.comicdetail.ui.ComicView
 import com.example.marvelmovies.comics.ui.ComicListView
+import com.example.marvelmovies.favorites.ui.FavoriteListView
 import com.example.marvelmovies.ui.views.BottomNavigationBarView
 import com.example.marvelmovies.utils.Constants
 
@@ -54,6 +55,8 @@ fun MarvelAppNavHost(
             startDestination = startDestination,
         ) {
             composable(Screen.ComicList.route) {
+                BackHandler(true) {}
+
                 ComicListView(
                     navigateToDetail = { comicId ->
                         navController.navigate(Screen.ComicDetail.createRoute(comicId))
@@ -70,13 +73,19 @@ fun MarvelAppNavHost(
                     },
                 ),
             ) {
+                BackHandler(true) {}
                 ComicView()
             }
 
             composable(
                 route = Screen.Favorites.route,
             ) {
-                FavoriteListView()
+                BackHandler(true) {}
+                FavoriteListView(
+                    navigateToDetail = { comicId ->
+                        navController.navigate(Screen.ComicDetail.createRoute(comicId))
+                    },
+                )
             }
         }
     }

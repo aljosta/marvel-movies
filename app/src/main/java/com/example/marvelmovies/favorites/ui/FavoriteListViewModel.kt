@@ -2,7 +2,7 @@ package com.example.marvelmovies.favorites.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.marvelmovies.favorites.domain.GetFavoriteComics
+import com.example.marvelmovies.favorites.domain.GetFavoriteComicsUseCase
 import com.example.marvelmovies.favorites.ui.models.FavoritesState
 import com.example.marvelmovies.comics.ui.mapper.ComicDtoToModelMapper
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class FavoriteListViewModel @Inject constructor(
-    private val getFavoriteComics: GetFavoriteComics,
+    private val getFavoriteComics: GetFavoriteComicsUseCase,
 ) : ViewModel() {
 
     private val _favoritesState = MutableStateFlow<FavoritesState>(FavoritesState.Loading)

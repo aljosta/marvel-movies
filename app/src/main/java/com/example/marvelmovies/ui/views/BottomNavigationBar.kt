@@ -50,7 +50,9 @@ fun BottomNavigationBarView(
                 selected = currentRoute == navItem.screen.route,
                 icon = { Icon(imageVector = navItem.icon, contentDescription = stringResource(id = navItem.title)) },
                 label = { Text(text = stringResource(id = navItem.title)) },
-                onClick = { navController.navigate(navItem.screen.route) },
+                onClick = {
+                    navController.navigate(navItem.screen.route)
+                },
             )
         }
     }

@@ -19,6 +19,7 @@ private const val TAG = "FavoriteListView"
 
 @Composable
 fun FavoriteListView(
+    navigateToDetail: (String) -> Unit,
     viewModel: FavoriteListViewModel = hiltViewModel(),
 ) {
     val favoriteListState by viewModel.favoritesState.collectAsStateWithLifecycle(
@@ -31,7 +32,7 @@ fun FavoriteListView(
             if (favoriteList.isEmpty()) {
                 EmptyStateView()
             } else {
-                FavoriteListView(favoriteList = favoriteList)
+                FavoriteListView(favoriteList = favoriteList, onItemClick = navigateToDetail)
             }
         }
         is FavoritesState.Error -> {
@@ -48,6 +49,7 @@ fun FavoriteListView(
 @Composable
 fun FavoriteListView(
     favoriteList: List<ComicModel>,
+    onItemClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     LazyVerticalGrid(
@@ -57,7 +59,7 @@ fun FavoriteListView(
         items(
             favoriteList.size,
         ) { index ->
-            ComicItemView(favoriteList[index])
+            ComicItemView(favoriteList[index], onItemClick)
         }
     }
 }

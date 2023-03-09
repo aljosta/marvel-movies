@@ -16,7 +16,7 @@ import com.example.marvelmovies.utils.Constants
 @Composable
 fun ComicItemView(
     comic: ComicModel,
-    onItemClick: (String) -> Unit = {},
+    onItemClick: (String) -> Unit,
 ) {
     Column(
         modifier = Modifier
